@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_f4n5F8()
+[Activity
+    Text = ${SendActivity_f4n5F8_text()}
+]
+
+# SendActivity_f4n5F8_text()
+- Multiclass Logistic Regression is a great choice if you have labeled data and want to predict between multiple (more than two) categories of labels (classes). For more information on the Azure Machine Learning component check the documentation [here](https://docs.microsoft.com/en-us/azure/machine-learning/component-reference/multiclass-logistic-regression).

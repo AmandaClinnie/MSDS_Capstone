@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_EpPIo3()
+[Activity
+    Text = ${ChoiceInput_Prompt_EpPIo3_text()}
+]
+
+# ChoiceInput_Prompt_EpPIo3_text()
+- Great! Following is a list of ML algorithms I can help you with. Please select the algorithm you would like to use.
+# SendActivity_k3kLEK()
+[Activity
+    Text = ${SendActivity_k3kLEK_text()}
+]
+
+# SendActivity_k3kLEK_text()
+- I am sorry that I am not equipped to help you with your problem at this time. Please consider checking the Microsoft documentation [here](https://docs.microsoft.com/en-us/azure/machine-learning/component-reference/component-reference) for a list of components they offer to use in the Azure Machine Learning Studio.

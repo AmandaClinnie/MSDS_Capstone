@@ -1,0 +1,46 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "dv2teP",
+    "name": "MulticlassLogisticRegression",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "LnP4vX"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "f4n5F8"
+          },
+          "activity": "${SendActivity_f4n5F8()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "kdojGU"
+          },
+          "activityProcessed": true,
+          "dialog": "MoreHelp"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "EKWvIn"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "MulticlassLogisticRegression.lg",
+  "recognizer": "MulticlassLogisticRegression.lu.qna",
+  "id": "MulticlassLogisticRegression"
+}

@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_ygYNzK()
+[Activity
+    Text = ${SendActivity_ygYNzK_text()}
+]
+
+# SendActivity_ygYNzK_text()
+- Two-Class Logistic Regression is a great choice if you have labeled data and want to predict between two categories of labels (classes). For more information on the Azure Machine Learning component check the documentation [here](https://docs.microsoft.com/en-us/azure/machine-learning/component-reference/two-class-logistic-regression).

@@ -1,0 +1,152 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "M8aQ97",
+    "name": "AlgorithmSelect",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "1cJa14"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "EpPIo3"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_EpPIo3()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "user.algorithm",
+          "style": "heroCard",
+          "choices": [
+            "Linear Regression",
+            "K-Means Clustering",
+            "Multiclass Logistic Regression Classification",
+            "Two-Class Logistic Regression Classification",
+            "None of the above"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "aXGx8Z"
+          },
+          "condition": "user.algorithm",
+          "cases": [
+            {
+              "value": "Linear Regression",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "0L9bH3"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "LinearRegression"
+                }
+              ]
+            },
+            {
+              "value": "K-Means Clustering",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "FCCuZ9"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "KMeansClustering"
+                }
+              ]
+            },
+            {
+              "value": "Multiclass Logistic Regression Classification",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "6AjDFL"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "MulticlassLogisticRegression"
+                }
+              ]
+            },
+            {
+              "value": "Two-Class Logistic Regression Classification",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "cX7WhM"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "TwoClassLogisticRegression"
+                }
+              ]
+            },
+            {
+              "value": "None of the above",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "k3kLEK"
+                  },
+                  "activity": "${SendActivity_k3kLEK()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "E8x5GC"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "MoreHelp"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "70cPtT"
+              },
+              "activityProcessed": true,
+              "dialog": "MoreHelp"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "Qb8XL3"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "AlgorithmSelect.lg",
+  "recognizer": "AlgorithmSelect.lu.qna",
+  "id": "AlgorithmSelect"
+}

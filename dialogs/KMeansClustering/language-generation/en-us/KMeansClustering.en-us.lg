@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_IN48eK()
+[Activity
+    Text = ${SendActivity_IN48eK_text()}
+]
+
+# SendActivity_IN48eK_text()
+- K-Means Clustering is a great choice if you have unlabeled data and/or you want to separate similar data points into groups. For more information on the Azure Machine Learning component check the documentation [here](https://docs.microsoft.com/en-us/azure/machine-learning/component-reference/k-means-clustering).

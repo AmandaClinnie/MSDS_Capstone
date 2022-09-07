@@ -1,0 +1,157 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "HhbCAo",
+    "name": "MoreHelp",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "NvFgoz"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "OZgxsf"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_OZgxsf()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "user.moreHelp",
+          "choices": [
+            "I need more help",
+            "That is all"
+          ],
+          "style": "heroCard"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "sgwHam"
+          },
+          "condition": "=user.moreHelp == 'I need more help'",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "kuSKzm"
+              },
+              "property": "user.helpSelect",
+              "value": "''"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "VCy5uT"
+              },
+              "property": "user.algorithm",
+              "value": "''"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "TsUXAm"
+              },
+              "property": "user.moreHelp",
+              "value": "''"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "93QS7U"
+              },
+              "property": "user.groupOrPredict",
+              "value": "''"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "lhBQny"
+              },
+              "property": "user.useAlgorithm",
+              "value": "''"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "pPdd6j"
+              },
+              "property": "user.labeledData",
+              "value": "''"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "2phxSO"
+              },
+              "property": "user.tryApproach",
+              "value": "''"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "d4ht91"
+              },
+              "property": "user.predictType",
+              "value": "''"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "QW0WwC"
+              },
+              "property": "user.numCategories",
+              "value": "''"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "tM3CMh"
+              },
+              "activityProcessed": true,
+              "dialog": "DetermineHelpNeeded"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "db3PST"
+              },
+              "activityProcessed": true,
+              "dialog": "EndConversation"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "3YUBKk"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "MoreHelp.lg",
+  "recognizer": "MoreHelp.lu.qna",
+  "id": "MoreHelp"
+}

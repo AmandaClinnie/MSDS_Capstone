@@ -1,0 +1,46 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "SSApld",
+    "name": "LinearRegression",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "6tENCN"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "n06nOZ"
+          },
+          "activity": "${SendActivity_n06nOZ()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "KXls6V"
+          },
+          "activityProcessed": true,
+          "dialog": "MoreHelp"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "qQhF3v"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "LinearRegression.lg",
+  "recognizer": "LinearRegression.lu.qna",
+  "id": "LinearRegression"
+}

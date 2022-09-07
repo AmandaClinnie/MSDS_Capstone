@@ -1,0 +1,32 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "oErUcr",
+    "name": "EndConversation",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "UIZCCW"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "RmZNYO"
+          },
+          "activity": "${SendActivity_RmZNYO()}"
+        }
+      ]
+    }
+  ],
+  "generator": "EndConversation.lg",
+  "recognizer": "EndConversation.lu.qna",
+  "id": "EndConversation"
+}

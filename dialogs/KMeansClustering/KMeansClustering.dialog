@@ -1,0 +1,46 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "8lHEaL",
+    "name": "KMeansClustering",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "TTiF5I"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "IN48eK"
+          },
+          "activity": "${SendActivity_IN48eK()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "q9SDVj"
+          },
+          "activityProcessed": true,
+          "dialog": "MoreHelp"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "ksEPhf"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "KMeansClustering.lg",
+  "recognizer": "KMeansClustering.lu.qna",
+  "id": "KMeansClustering"
+}

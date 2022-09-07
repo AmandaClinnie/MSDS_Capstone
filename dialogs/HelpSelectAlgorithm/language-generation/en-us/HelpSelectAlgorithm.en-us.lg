@@ -1,0 +1,127 @@
+[import](common.lg)
+
+# SendActivity_f1tPcV()
+[Activity
+    Text = ${SendActivity_f1tPcV_text()}
+]
+
+# SendActivity_f1tPcV_text()
+- I am happy to help with that, ${user.name}! I will need to understand more about your problem to determine which ML algorithm is best for you. I will ask you a series of questions related to your problem and data - please answer to the best of your ability.
+# ChoiceInput_Prompt_hRBvhD()
+[Activity
+    Text = ${ChoiceInput_Prompt_hRBvhD_text()}
+]
+
+# ChoiceInput_Prompt_hRBvhD_text()
+- Do you need to group related data or make predictions regarding your data?
+# SendActivity_XZgeiG()
+[Activity
+    Text = ${SendActivity_XZgeiG_text()}
+]
+
+# SendActivity_XZgeiG_text()
+- If you need to group related data, K-Means Clustering is likely the best ML algorithm for you to use. Clustering groups together similar data points and can help discover patterns in or the structure of your data. 
+# ChoiceInput_Prompt_3fLKGs()
+[Activity
+    Text = ${ChoiceInput_Prompt_3fLKGs_text()}
+]
+
+# ChoiceInput_Prompt_3fLKGs_text()
+- Would you like to use this algorithm?
+# ChoiceInput_Prompt_KXomd5_text()
+- Training models to make predictions requires having labeled data so that the model can confirm if its predictions are correct or not. Do you know if your data is labeled with a target column?
+# ChoiceInput_Prompt_KXomd5()
+[Activity
+    Text = ${ChoiceInput_Prompt_KXomd5_text()}
+]
+
+# SendActivity_29l4gC_text()
+- I would recommend you attempt to label your data and then come back. You could also use K-Means Clustering to group your data without labels, but this is not considered making predictions.
+# SendActivity_29l4gC()
+[Activity
+    Text = ${SendActivity_29l4gC_text()}
+]
+
+# ChoiceInput_Prompt_AoNFx6_text()
+- Would you like to try this approach or end the conversation and try to label your data?
+# ChoiceInput_Prompt_AoNFx6()
+[Activity
+    Text = ${ChoiceInput_Prompt_AoNFx6_text()}
+]
+
+# SendActivity_yIMnJ1_text()
+- That's okay! For suggestion purposes, I will assume that your data is labeled so that I can narrow down which algorithm would be best for you to use.
+# SendActivity_yIMnJ1()
+[Activity
+    Text = ${SendActivity_yIMnJ1_text()}
+]
+
+# ChoiceInput_Prompt_X1JI2F_text()
+- Would you like to predict (numeric) values or predict categories?
+# ChoiceInput_Prompt_X1JI2F()
+[Activity
+    Text = ${ChoiceInput_Prompt_X1JI2F_text()}
+]
+
+# SendActivity_JKoHEJ_text()
+- If you need to predict values, Regression is likely the best ML algorithm for you to use. There are various sub-types of Regression, but one of the most common/simple algorithms is Linear Regression. Linear Regression finds linear relationships between independent variables in data. 
+# SendActivity_JKoHEJ()
+[Activity
+    Text = ${SendActivity_JKoHEJ_text()}
+]
+
+# ChoiceInput_Prompt_YckTIp_text()
+- Would you like to use this algorithm?
+# ChoiceInput_Prompt_YckTIp()
+[Activity
+    Text = ${ChoiceInput_Prompt_YckTIp_text()}
+]
+
+# ChoiceInput_Prompt_qXISN5_text()
+- How many categories are there to predict between in your data?
+# ChoiceInput_Prompt_qXISN5()
+[Activity
+    Text = ${ChoiceInput_Prompt_qXISN5_text()}
+]
+
+# SendActivity_zpieOS_text()
+- If you need to predict between two categories, Two-Class Classification is likely the best approach for you. There are various sub-types of Two-Class Classification, but one of the most common/simple algorithms is Two-Class Logistic Regression. Two-Class Logistic Regression can predict the probability of an outcome, specifically between two classes.
+# SendActivity_zpieOS()
+[Activity
+    Text = ${SendActivity_zpieOS_text()}
+]
+
+# ChoiceInput_Prompt_zZHxPU_text()
+- Would you like to use this algorithm?
+# ChoiceInput_Prompt_zZHxPU()
+[Activity
+    Text = ${ChoiceInput_Prompt_zZHxPU_text()}
+]
+
+# SendActivity_fsk6gd_text()
+- If you need to predict between more than two categories, Multiclass Classification is likely the best approach for you. There are various sub-types of Multiclass Classification, but one of the most common/simple algorithms is Multiclass Logistic Regression. Multiclass Logistic Regression can predict the probability of an outcome, specifically between multiple (more than two) classes.
+# SendActivity_fsk6gd()
+[Activity
+    Text = ${SendActivity_fsk6gd_text()}
+]
+
+# ChoiceInput_Prompt_V0b03H_text()
+- Would you like to use this algorithm?
+# ChoiceInput_Prompt_V0b03H()
+[Activity
+    Text = ${ChoiceInput_Prompt_V0b03H_text()}
+]
+
+# SendActivity_Rz3Qng_text()
+- That's okay! I would recommend using Multiclass Logistic Regression since this approach would work whether you had two or more categories.
+# SendActivity_Rz3Qng()
+[Activity
+    Text = ${SendActivity_Rz3Qng_text()}
+]
+
+# ChoiceInput_Prompt_cU9WFt_text()
+- Would you like to use this algorithm?
+# ChoiceInput_Prompt_cU9WFt()
+[Activity
+    Text = ${ChoiceInput_Prompt_cU9WFt_text()}
+]

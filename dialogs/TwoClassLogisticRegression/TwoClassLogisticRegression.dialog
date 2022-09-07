@@ -1,0 +1,46 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "6ffKOF",
+    "name": "TwoClassLogisticRegression",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "pNXPWe"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "ygYNzK"
+          },
+          "activity": "${SendActivity_ygYNzK()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "0JVpuB"
+          },
+          "activityProcessed": true,
+          "dialog": "MoreHelp"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "YuCoFV"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "TwoClassLogisticRegression.lg",
+  "recognizer": "TwoClassLogisticRegression.lu.qna",
+  "id": "TwoClassLogisticRegression"
+}

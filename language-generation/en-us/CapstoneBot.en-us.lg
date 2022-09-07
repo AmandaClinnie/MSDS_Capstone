@@ -1,0 +1,37 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+# SendActivity_Greeting_text()
+- Welcome! I am a Data Science Model Assistant, but you can call me DASMA.
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- Sorry, I didn't understand that.
+# TextInput_Prompt_DZOp4G()
+[Activity
+    Text = ${TextInput_Prompt_DZOp4G_text()}
+]
+
+# TextInput_Prompt_DZOp4G_text()
+- What is your name?
+# SendActivity_2ZPbgf()
+[Activity
+    Text = ${SendActivity_2ZPbgf_text()}
+]
+
+# SendActivity_2ZPbgf_text()
+- Hello, ${user.name}! I am a chat bot capable of helping you select Machine Learning (ML) solutions on Microsoft Azure. I can suggest specific ML algorithms based on your input.
+# ChoiceInput_Prompt_yIhAKZ()
+[Activity
+    Text = ${ChoiceInput_Prompt_yIhAKZ_text()}
+]
+
+# ChoiceInput_Prompt_yIhAKZ_text()
+- Do you need my help with an ML solution?

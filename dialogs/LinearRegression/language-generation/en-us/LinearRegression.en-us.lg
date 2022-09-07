@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_n06nOZ()
+[Activity
+    Text = ${SendActivity_n06nOZ_text()}
+]
+
+# SendActivity_n06nOZ_text()
+- Linear Regression is a great choice if you have labeled data and want to predict continuous, numeric values. For more information on the Azure Machine Learning component check the documentation [here](https://docs.microsoft.com/en-us/azure/machine-learning/component-reference/linear-regression).

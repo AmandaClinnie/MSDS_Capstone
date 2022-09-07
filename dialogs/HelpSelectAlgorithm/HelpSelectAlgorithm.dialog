@@ -1,0 +1,610 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "QSkBL8",
+    "name": "HelpSelectAlgorithm",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "X2IWN1"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "f1tPcV"
+          },
+          "activity": "${SendActivity_f1tPcV()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "hRBvhD"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_hRBvhD()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true
+          },
+          "property": "user.groupOrPredict",
+          "style": "heroCard",
+          "choices": [
+            "Group related data",
+            "Make predictions"
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "PY3vQj"
+          },
+          "condition": "=user.groupOrPredict == 'Group related data'",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "XZgeiG"
+              },
+              "activity": "${SendActivity_XZgeiG()}"
+            },
+            {
+              "$kind": "Microsoft.ChoiceInput",
+              "$designer": {
+                "id": "3fLKGs"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${ChoiceInput_Prompt_3fLKGs()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or "
+              },
+              "property": "user.useAlgorithm",
+              "style": "heroCard",
+              "choices": [
+                "Yes",
+                "No"
+              ]
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "iIWtXJ"
+              },
+              "condition": "=user.useAlgorithm == 'Yes'",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "jvRdG4"
+                  },
+                  "property": "user.algorithm",
+                  "value": "K-Means Clustering"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "fQTZRO"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "KMeansClustering"
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "dyufXo"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "MoreHelp"
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.ChoiceInput",
+              "$designer": {
+                "id": "KXomd5"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${ChoiceInput_Prompt_KXomd5()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "choiceOptions": {
+                "includeNumbers": true
+              },
+              "property": "user.labeledData",
+              "style": "heroCard",
+              "choices": [
+                "My data is labeled",
+                "My data is not labeled",
+                "I don't know if my data is labeled"
+              ]
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "7iQGB9"
+              },
+              "condition": "=user.labeledData == 'My data is not labeled'",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "29l4gC"
+                  },
+                  "activity": "${SendActivity_29l4gC()}"
+                },
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "AoNFx6"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_AoNFx6()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "choiceOptions": {
+                    "includeNumbers": true
+                  },
+                  "property": "user.tryApproach",
+                  "style": "heroCard",
+                  "choices": [
+                    "Use K-Means Clustering",
+                    "Label my data"
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "7hTdeD"
+                  },
+                  "condition": "=user.tryApproach == 'Use K-Means Clustering'",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "OoalpL"
+                      },
+                      "property": "user.algorithm",
+                      "value": "K-Means Clustering"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "rduzmC"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "KMeansClustering"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "ypMM6N"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "EndConversation"
+                    }
+                  ]
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "WSgSWM"
+                  },
+                  "condition": "=user.labeledData == \"I don't know if my data is labeled\"",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "yIMnJ1"
+                      },
+                      "activity": "${SendActivity_yIMnJ1()}"
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "X1JI2F"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_X1JI2F()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or "
+                  },
+                  "property": "user.predictType",
+                  "style": "heroCard",
+                  "choices": [
+                    "Predict values",
+                    "Predict categories"
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "DEYcgn"
+                  },
+                  "condition": "=user.predictType == 'Predict values'",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "JKoHEJ"
+                      },
+                      "activity": "${SendActivity_JKoHEJ()}"
+                    },
+                    {
+                      "$kind": "Microsoft.ChoiceInput",
+                      "$designer": {
+                        "id": "YckTIp"
+                      },
+                      "defaultLocale": "en-us",
+                      "disabled": false,
+                      "maxTurnCount": 3,
+                      "alwaysPrompt": false,
+                      "allowInterruptions": false,
+                      "unrecognizedPrompt": "",
+                      "invalidPrompt": "",
+                      "defaultValueResponse": "",
+                      "prompt": "${ChoiceInput_Prompt_YckTIp()}",
+                      "choiceOptions": {
+                        "includeNumbers": true
+                      },
+                      "property": "user.useAlgorithm",
+                      "style": "heroCard",
+                      "choices": [
+                        "Yes",
+                        "No"
+                      ]
+                    },
+                    {
+                      "$kind": "Microsoft.IfCondition",
+                      "$designer": {
+                        "id": "9kVd0Q"
+                      },
+                      "condition": "=user.useAlgorithm == 'Yes'",
+                      "actions": [
+                        {
+                          "$kind": "Microsoft.SetProperty",
+                          "$designer": {
+                            "id": "NzGNh1"
+                          },
+                          "property": "user.algorithm",
+                          "value": "Linear Regression"
+                        },
+                        {
+                          "$kind": "Microsoft.BeginDialog",
+                          "$designer": {
+                            "id": "i7fhLZ"
+                          },
+                          "activityProcessed": true,
+                          "dialog": "LinearRegression"
+                        }
+                      ],
+                      "elseActions": [
+                        {
+                          "$kind": "Microsoft.BeginDialog",
+                          "$designer": {
+                            "id": "2yG4dd"
+                          },
+                          "activityProcessed": true,
+                          "dialog": "MoreHelp"
+                        }
+                      ]
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.ChoiceInput",
+                      "$designer": {
+                        "id": "qXISN5"
+                      },
+                      "defaultLocale": "en-us",
+                      "disabled": false,
+                      "maxTurnCount": 3,
+                      "alwaysPrompt": false,
+                      "allowInterruptions": false,
+                      "prompt": "${ChoiceInput_Prompt_qXISN5()}",
+                      "unrecognizedPrompt": "",
+                      "invalidPrompt": "",
+                      "defaultValueResponse": "",
+                      "choiceOptions": {
+                        "includeNumbers": true
+                      },
+                      "property": "user.numCategories",
+                      "style": "heroCard",
+                      "choices": [
+                        "Two categories",
+                        "More than two categories",
+                        "I don't know how many categories there are"
+                      ]
+                    },
+                    {
+                      "$kind": "Microsoft.SwitchCondition",
+                      "$designer": {
+                        "id": "YLVVnx"
+                      },
+                      "condition": "user.numCategories",
+                      "cases": [
+                        {
+                          "value": "Two categories",
+                          "actions": [
+                            {
+                              "$kind": "Microsoft.SendActivity",
+                              "$designer": {
+                                "id": "zpieOS"
+                              },
+                              "activity": "${SendActivity_zpieOS()}"
+                            },
+                            {
+                              "$kind": "Microsoft.ChoiceInput",
+                              "$designer": {
+                                "id": "zZHxPU"
+                              },
+                              "defaultLocale": "en-us",
+                              "disabled": false,
+                              "maxTurnCount": 3,
+                              "alwaysPrompt": false,
+                              "allowInterruptions": false,
+                              "prompt": "${ChoiceInput_Prompt_zZHxPU()}",
+                              "unrecognizedPrompt": "",
+                              "invalidPrompt": "",
+                              "defaultValueResponse": "",
+                              "choiceOptions": {
+                                "includeNumbers": true,
+                                "inlineOrMore": ", or "
+                              },
+                              "property": "user.useAlgorithm",
+                              "style": "heroCard",
+                              "choices": [
+                                "Yes",
+                                "No"
+                              ]
+                            },
+                            {
+                              "$kind": "Microsoft.IfCondition",
+                              "$designer": {
+                                "id": "e7i36X"
+                              },
+                              "condition": "=user.useAlgorithm == 'Yes'",
+                              "actions": [
+                                {
+                                  "$kind": "Microsoft.SetProperty",
+                                  "$designer": {
+                                    "id": "rNjgx1"
+                                  },
+                                  "property": "user.algorithm",
+                                  "value": "Two-Class Logistic Regression"
+                                },
+                                {
+                                  "$kind": "Microsoft.BeginDialog",
+                                  "$designer": {
+                                    "id": "V1U6jV"
+                                  },
+                                  "activityProcessed": true,
+                                  "dialog": "TwoClassLogisticRegression"
+                                }
+                              ],
+                              "elseActions": [
+                                {
+                                  "$kind": "Microsoft.BeginDialog",
+                                  "$designer": {
+                                    "id": "BVKg6R"
+                                  },
+                                  "activityProcessed": true,
+                                  "dialog": "MoreHelp"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "value": "More than two categories",
+                          "actions": [
+                            {
+                              "$kind": "Microsoft.SendActivity",
+                              "$designer": {
+                                "id": "fsk6gd"
+                              },
+                              "activity": "${SendActivity_fsk6gd()}"
+                            },
+                            {
+                              "$kind": "Microsoft.ChoiceInput",
+                              "$designer": {
+                                "id": "V0b03H"
+                              },
+                              "defaultLocale": "en-us",
+                              "disabled": false,
+                              "maxTurnCount": 3,
+                              "alwaysPrompt": false,
+                              "allowInterruptions": false,
+                              "prompt": "${ChoiceInput_Prompt_V0b03H()}",
+                              "unrecognizedPrompt": "",
+                              "invalidPrompt": "",
+                              "defaultValueResponse": "",
+                              "choiceOptions": {
+                                "includeNumbers": true,
+                                "inlineOrMore": ", or "
+                              },
+                              "property": "user.useAlgorithm",
+                              "style": "heroCard",
+                              "choices": [
+                                "Yes",
+                                "No"
+                              ]
+                            },
+                            {
+                              "$kind": "Microsoft.IfCondition",
+                              "$designer": {
+                                "id": "IwJ8Gy"
+                              },
+                              "condition": "=user.useAlgorithm == 'Yes'",
+                              "actions": [
+                                {
+                                  "$kind": "Microsoft.SetProperty",
+                                  "$designer": {
+                                    "id": "hJXUwr"
+                                  },
+                                  "property": "user.algorithm",
+                                  "value": "Multiclass Logistic Regression"
+                                },
+                                {
+                                  "$kind": "Microsoft.BeginDialog",
+                                  "$designer": {
+                                    "id": "Qnu0r7"
+                                  },
+                                  "activityProcessed": true,
+                                  "dialog": "MulticlassLogisticRegression"
+                                }
+                              ],
+                              "elseActions": [
+                                {
+                                  "$kind": "Microsoft.BeginDialog",
+                                  "$designer": {
+                                    "id": "DFGGFi"
+                                  },
+                                  "activityProcessed": true,
+                                  "dialog": "MoreHelp"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "value": "I don't know how many categories there are",
+                          "actions": [
+                            {
+                              "$kind": "Microsoft.SendActivity",
+                              "$designer": {
+                                "id": "Rz3Qng"
+                              },
+                              "activity": "${SendActivity_Rz3Qng()}"
+                            },
+                            {
+                              "$kind": "Microsoft.ChoiceInput",
+                              "$designer": {
+                                "id": "cU9WFt"
+                              },
+                              "defaultLocale": "en-us",
+                              "disabled": false,
+                              "maxTurnCount": 3,
+                              "alwaysPrompt": false,
+                              "allowInterruptions": false,
+                              "prompt": "${ChoiceInput_Prompt_cU9WFt()}",
+                              "unrecognizedPrompt": "",
+                              "invalidPrompt": "",
+                              "defaultValueResponse": "",
+                              "choiceOptions": {
+                                "includeNumbers": true,
+                                "inlineOrMore": ", or "
+                              },
+                              "property": "user.useAlgorithm",
+                              "style": "heroCard",
+                              "choices": [
+                                "Yes",
+                                "No"
+                              ]
+                            },
+                            {
+                              "$kind": "Microsoft.IfCondition",
+                              "$designer": {
+                                "id": "zA5RcE"
+                              },
+                              "condition": "=user.useAlgorithm == 'Yes'",
+                              "actions": [
+                                {
+                                  "$kind": "Microsoft.SetProperty",
+                                  "$designer": {
+                                    "id": "Bk1xAG"
+                                  },
+                                  "property": "user.algorithm",
+                                  "value": "Multiclass Logistic Regression"
+                                },
+                                {
+                                  "$kind": "Microsoft.BeginDialog",
+                                  "$designer": {
+                                    "id": "r4osVT"
+                                  },
+                                  "activityProcessed": true,
+                                  "dialog": "MulticlassLogisticRegression"
+                                }
+                              ],
+                              "elseActions": [
+                                {
+                                  "$kind": "Microsoft.BeginDialog",
+                                  "$designer": {
+                                    "id": "d6zQ9P"
+                                  },
+                                  "activityProcessed": true,
+                                  "dialog": "MoreHelp"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "nDwj8Y"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "HelpSelectAlgorithm.lg",
+  "recognizer": "HelpSelectAlgorithm.lu.qna",
+  "id": "HelpSelectAlgorithm"
+}

@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_RmZNYO()
+[Activity
+    Text = ${SendActivity_RmZNYO_text()}
+]
+
+# SendActivity_RmZNYO_text()
+- Okay, please feel free to come back if you need my help. Have a nice day ${user.name}!

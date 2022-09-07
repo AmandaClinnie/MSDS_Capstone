@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_OZgxsf()
+[Activity
+    Text = ${ChoiceInput_Prompt_OZgxsf_text()}
+]
+
+# ChoiceInput_Prompt_OZgxsf_text()
+- Can I help you with anything else or is that all?

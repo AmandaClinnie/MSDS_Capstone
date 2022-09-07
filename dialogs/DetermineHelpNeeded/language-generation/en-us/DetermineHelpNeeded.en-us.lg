@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_mxYhks()
+[Activity
+    Text = ${ChoiceInput_Prompt_mxYhks_text()}
+]
+
+# ChoiceInput_Prompt_mxYhks_text()
+- Do you need help selecting an ML algorithm or do you have one in mind?
